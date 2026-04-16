@@ -1,0 +1,15 @@
+print("1 circle")
+print("2 rectangle")
+print("3 triangle")
+c=int(input("choose:"))
+if c ==1
+r-float(input("radius"))
+print("area",3.14*r*r)
+elif C ==2
+1-float(input("length :"))
+b = float(input("breadth:")
+print("area",1*b)
+elif c ==3
+b = float(input("base:"))
+h = float(input("hight:"))
+print("arae =^ prime prime , b ^ * h)
