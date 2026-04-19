@@ -1,0 +1,35 @@
+# Program to print words of specified lengths from a file
+
+def find_words_by_length(filename, lengths):
+    try:
+        with open(filename, 'r') as file:
+            text = file.read()
+
+        # Remove punctuation and split into words
+        words = text.split()
+
+        print("Words with specified lengths:\n")
+
+        for length in lengths:
+            print(f"Length {length}:")
+            for word in words:
+                # Clean word (remove punctuation)
+                clean_word = ''.join(char for char in word if char.isalnum())
+
+                if len(clean_word) == length:
+                    print(clean_word)
+            print()
+
+    except FileNotFoundError:
+        print("File not found. Please check the filename.")
+
+
+# User input
+file_name = input("Enter file name: ")
+lengths_input = input("Enter word lengths (comma-separated, e.g., 3,4,5): ")
+
+# Convert input into list of integers
+lengths = [int(x) for x in lengths_input.split(',')]
+
+# Call function
+find_words_by_length(file_name, lengths)
