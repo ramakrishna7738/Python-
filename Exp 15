@@ -1,0 +1,26 @@
+# Debugging Example using pdb
+
+import pdb
+
+def calculate_average(numbers):
+    total = 0
+    for i in range(len(numbers)):
+        total += numbers[i]   # Step through this loop
+    average = total / len(numbers)
+    return average
+
+def main():
+    nums = [10, 20, 30, 40, 50]
+
+    # Set breakpoint
+    pdb.set_trace()
+
+    avg = calculate_average(nums)
+    print("Average is:", avg)
+
+    # Intentional error (division by zero)
+    x = 10 / 0
+    print("Result:", x)
+
+if __name__ == "__main__":
+    main()
